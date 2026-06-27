@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #050508;
+  --bg-card: #0d0d14;
+  --bg-elevated: #13131f;
+  --chad-green: #00ff88;
+  --chad-green-dim: #00ff8833;
+  --chad-purple: #7b5ef8;
+  --chad-purple-dim: #7b5ef822;
+  --chad-yellow: #ffd166;
+  --chad-red: #ff4466;
+  --border: #1e1e2e;
+  --border-bright: #2a2a40;
+  --text-primary: #f0f0ff;
+  --text-secondary: #8080a0;
+  --text-muted: #404060;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+@keyframes ticker-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes ticker-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.ticker-left { animation: ticker-left 35s linear infinite; }
+.ticker-right { animation: ticker-right 35s linear infinite; }
+.ticker-left:hover, .ticker-right:hover { animation-play-state: paused; }
+
+.glow-green { box-shadow: 0 0 20px #00ff8833; }
+.text-glow { text-shadow: 0 0 30px #00ff88; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #00ff88 0%, #7b5ef8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(123,94,248,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123,94,248,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.float-anim { animation: float 5s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 25s linear infinite; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease forwards; }
+
+.card { background: #0d0d14; border: 1px solid #1e1e2e; border-radius: 12px; }
+.card-elevated { background: #13131f; border: 1px solid #2a2a40; border-radius: 12px; }
+
+@media (max-width: 768px) { .hide-mobile { display: none !important; } }
+@media (min-width: 769px) { .hide-desktop { display: none !important; } }
