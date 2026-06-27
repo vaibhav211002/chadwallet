@@ -1,6 +1,5 @@
 # ChadWallet — Landing Page
 
-> fomo.family-style Solana trading landing page — built as the ChadWallet founding engineer screening task.
 
 ![Hero screenshot](docs/screenshots/hero.png)
 ![Trending tokens](docs/screenshots/realtime.png)
