@@ -3,7 +3,6 @@ export function formatPrice(price: number): string {
   if (price >= 1000) return `$${price.toLocaleString('en-US', { maximumFractionDigits: 2 })}`;
   if (price >= 1) return `$${price.toFixed(4)}`;
   if (price >= 0.01) return `$${price.toFixed(6)}`;
-  // Very small numbers
   const str = price.toFixed(12);
   const match = str.match(/^0\.(0*)/);
   const zeros = match ? match[1].length : 0;

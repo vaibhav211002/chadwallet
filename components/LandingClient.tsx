@@ -234,12 +234,9 @@ export default function LandingClient({ tokens }: Props) {
 
   return (
     <div className="min-h-screen bg-[#050508]">
-      {/* TOP BANNER */}
       <TokenBanner tokens={tokens} direction="left" />
 
-      {/* ─── HERO ─── */}
       <section className="relative overflow-hidden grid-bg">
-        {/* ambient blobs */}
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, #7b5ef815 0%, transparent 70%)' }} />
         <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] rounded-full pointer-events-none"
@@ -262,7 +259,6 @@ export default function LandingClient({ tokens }: Props) {
               Sign in with Apple or Google — no seed phrase needed.
             </p>
 
-            {/* social sign-in callout */}
             <div className="flex items-center gap-3 mb-8 p-3 rounded-xl border border-[#1e1e2e] bg-[#0d0d14] w-fit">
               <div className="flex -space-x-1">
                 {['🍎','G','🔑'].map((icon, i) => (
@@ -274,7 +270,6 @@ export default function LandingClient({ tokens }: Props) {
               <span className="text-xs text-[#8080a0]">Sign in with <strong className="text-[#f0f0ff]">Apple</strong>, <strong className="text-[#f0f0ff]">Google</strong>, or wallet</span>
             </div>
 
-            {/* CTA row */}
             <div className="flex flex-wrap gap-3 mb-10">
               <button
                 onClick={() => authenticated ? router.push('/trade') : login()}
@@ -292,7 +287,6 @@ export default function LandingClient({ tokens }: Props) {
               </a>
             </div>
 
-            {/* trust badges */}
             <div className="flex flex-wrap items-center gap-4 text-xs text-[#8080a0]">
               <span className="flex items-center gap-1">✓ <span>Non-custodial</span></span>
               <span className="flex items-center gap-1">✓ <span>0% platform fee</span></span>
@@ -301,14 +295,12 @@ export default function LandingClient({ tokens }: Props) {
             </div>
           </div>
 
-          {/* right: phone mockup */}
           <div className="flex justify-center lg:justify-end">
             <PhoneMockup feed={feed} />
           </div>
         </div>
       </section>
 
-      {/* ─── STATS STRIP ─── */}
       <div className="border-y border-[#1e1e2e] bg-[#08080f]">
         <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -325,7 +317,6 @@ export default function LandingClient({ tokens }: Props) {
         </div>
       </div>
 
-      {/* ─── TRENDING TOKENS ─── */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-10">
@@ -354,7 +345,6 @@ export default function LandingClient({ tokens }: Props) {
         </div>
       </section>
 
-      {/* ─── FEATURES ─── */}
       <section className="py-20 px-4 bg-[#07070e]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -420,7 +410,6 @@ export default function LandingClient({ tokens }: Props) {
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
@@ -429,7 +418,6 @@ export default function LandingClient({ tokens }: Props) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-            {/* connector line */}
             <div className="hidden md:block absolute top-8 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[#2a2a40] to-transparent" />
 
             {[
@@ -458,7 +446,6 @@ export default function LandingClient({ tokens }: Props) {
         </div>
       </section>
 
-      {/* ─── LEADERBOARD TEASER ─── */}
       <section className="py-20 px-4 bg-[#07070e]">
         <div className="max-w-3xl mx-auto">
           <div className="rounded-3xl border border-[#2a2a40] overflow-hidden relative"
@@ -474,7 +461,6 @@ export default function LandingClient({ tokens }: Props) {
                 <p className="mt-2 text-[#8080a0]">Join 180K+ traders competing on the leaderboard</p>
               </div>
 
-              {/* podium */}
               <div className="flex items-end justify-center gap-3 mb-10">
                 {[
                   { rank: '#2', addr: '0xsol...f4ce', pct: '+561%', h: 'h-20', col: '#00ff88' },
@@ -492,7 +478,6 @@ export default function LandingClient({ tokens }: Props) {
                 ))}
               </div>
 
-              {/* download CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a href={APPLE_URL} target="_blank" rel="noopener"
                   className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-[#050508] bg-[#f0f0ff] hover:bg-white transition-all">
@@ -508,7 +493,6 @@ export default function LandingClient({ tokens }: Props) {
         </div>
       </section>
 
-      {/* ─── FINAL CTA ─── */}
       <section className="py-24 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-50 pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none"
@@ -535,10 +519,8 @@ export default function LandingClient({ tokens }: Props) {
         </div>
       </section>
 
-      {/* BOTTOM BANNER */}
       <TokenBanner tokens={tokens} direction="right" />
 
-      {/* ─── FOOTER ─── */}
       <footer className="border-t border-[#1e1e2e] py-10 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">

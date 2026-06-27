@@ -39,7 +39,6 @@ function TokenChip({ token, onClick }: { token: Token; onClick: () => void }) {
 
 export default function TokenBanner({ tokens, direction = 'left' }: Props) {
   const router = useRouter();
-  // Duplicate for seamless loop
   const doubled = [...tokens, ...tokens];
   const cls = direction === 'left' ? 'ticker-left' : 'ticker-right';
 
